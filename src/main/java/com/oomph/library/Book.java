@@ -41,8 +41,8 @@ public class Book {
     }
 
     public void setAvailableCopies(int availableCopies) {
-        if(availableCopies < 0) {
-            throw new IllegalArgumentException("Available copies can not be negative");
+        if(availableCopies < 0 || availableCopies > totalCopies) {
+            throw new IllegalArgumentException("Available copies can only be >= 0 or <= total copies");
         }
         this.availableCopies = availableCopies;
     }
