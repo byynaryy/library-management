@@ -8,9 +8,9 @@ public class Book {
     private int availableCopies;
 
     public Book(String isbn, String title, String author) {
-        this.isbn = validate(isbn);
-        this.title = validate(title);
-        this.author = validate(author);
+        this.isbn = validate(isbn, "ISBN");
+        this.title = validate(title, "Title");
+        this.author = validate(author, "Author");
     }
 
     public String getIsbn() {
@@ -47,9 +47,9 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    private String validate(String field) {
+    private String validate(String field, String fieldName) {
         if(field == null || field.isBlank()) {
-            throw new IllegalArgumentException(field + "can not be emty");
+            throw new IllegalArgumentException( fieldName + "can not be empty");
         }
         return field;
     }
