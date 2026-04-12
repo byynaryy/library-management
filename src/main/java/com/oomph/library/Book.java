@@ -34,8 +34,8 @@ public class Book {
     }
 
     public void setTotalCopies(int totalCopies) {
-        if(totalCopies < 1) {
-            throw new IllegalArgumentException("Total copies can not be less than one");
+        if(totalCopies < 1 || totalCopies < availableCopies) {
+            throw new IllegalArgumentException("Total copies can not be less than one or less than available copies");
         }
         this.totalCopies = totalCopies;
     }
