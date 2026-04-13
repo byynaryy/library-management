@@ -7,10 +7,12 @@ public class Book {
     private int totalCopies;
     private int availableCopies;
 
-    public Book(String isbn, String title, String author) {
+    public Book(String isbn, String title, String author, int totalCopies) {
         this.isbn = validate(isbn, "ISBN");
         this.title = validate(title, "Title");
         this.author = validate(author, "Author");
+        this.totalCopies = validateTotalCopies(totalCopies);
+        this.availableCopies= totalCopies;
     }
 
     public String getIsbn() {
@@ -49,7 +51,7 @@ public class Book {
 
     private String validate(String field, String fieldName) {
         if(field == null || field.isBlank()) {
-            throw new IllegalArgumentException( fieldName + "can not be empty");
+            throw new IllegalArgumentException( fieldName + " can not be empty");
         }
         return field;
     }
