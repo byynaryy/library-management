@@ -54,5 +54,10 @@ public class Book {
         return field;
     }
 
-
+    private int validateTotalCopies(int totalCopies) {
+        if(totalCopies < 1) {
+            throw new IllegalArgumentException("Total copies can not be less than one");
+        }
+        return totalCopies;
+    }
 }
