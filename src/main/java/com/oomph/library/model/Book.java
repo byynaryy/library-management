@@ -1,4 +1,4 @@
-package com.oomph.library;
+package com.oomph.library.model;
 
 public class Book {
     private final String isbn;
